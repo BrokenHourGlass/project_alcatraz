@@ -51,3 +51,5 @@ https://docs.google.com/document/d/1jaVVjRFK2WcIBlWHrsxiOkipU0nfdwgGN73WEbhS_pc/
 #### lol section
 It puts the lotion on its skin or else it gets the hose again. :)
 PS I also like rusty spoons on my salad fingers. It's almost orgasmic.
+
+08/12/23 I pooped today!!! :D
