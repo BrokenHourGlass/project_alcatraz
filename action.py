@@ -1,3 +1,5 @@
+import sys
+
 class Action:
     def __init__(self):
         pass
@@ -30,3 +32,8 @@ class Action:
         elif item:
             return f"you used {item}"
         return "You use the air...its ineffective"
+    
+    def quit(self):
+        print("Goodbye")
+        sys.exit()
+
