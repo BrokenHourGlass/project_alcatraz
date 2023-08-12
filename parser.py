@@ -1,3 +1,7 @@
+from action import Action
+
+action_handler = Action()
+
 class InputParser:
     def __init__(self):
         # Here, you can initialize any common commands or synonyms.
@@ -9,6 +13,9 @@ class InputParser:
             "use": ["use", "apply", "utilize"],
             "quit": ["quit", "exit", "leave", "stop"]
         }
+        command_actions = {
+            "look": action_handler.look()
+        }
 
     def parse(self, input_text):
         # Convert input to lowercase for easier matching
@@ -16,7 +23,7 @@ class InputParser:
         print(input_text)
         # Check for a match in our command mapping
         for command, synonyms in self.commands.items():
-            print(command, synonyms)
+            #print(command, synonyms)
             for synonym in synonyms:
                 if synonym in input_text:
                     return command
