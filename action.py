@@ -12,6 +12,7 @@ class Action:
     def look(self, target=None):
         if target:
             if target.description:
+                print(target.description)
                 return target.description
             else:
                 return "it seems inconsequential"

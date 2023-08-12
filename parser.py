@@ -36,7 +36,7 @@ class InputParser:
     def parse(self, input_text):
         # Convert input to lowercase for easier matching
         input_text = input_text.lower().strip()
-        print(input_text)
+        #print(input_text)
         # Check for a match in our command mapping
         for command, details in self.commands.items():
             #print(command, synonyms)
@@ -51,9 +51,15 @@ parser = InputParser()
 while True:
     user_input = input("What do you do: ")
     interpreted_command = parser.parse(user_input)
-    if interpreted_command.lower() in parser.commands["quit"]["synonyms"]:
-        parser.commands["quit"]["action"]()
-    elif interpreted_command.lower() == "go":
-        print("you run quickly")
-    else:
+    
+    if interpreted_command == -1:
         print("I can't do that!")
+        continue
+    try:
+        if "action" in parser.commands[interpreted_command]:
+            print(parser.commands[interpreted_command]["action"]())
+        else:
+            print(f"I can't {interpreted_command} right now")
+    except Exception as e:
+        print("I can't do that!")
+    
