@@ -45,21 +45,24 @@ class InputParser:
                     return command
         
         return "-1"
+    
+    def await_input(self):
+        user_input = input("What do you do:  ")
+        interpreted_command = self.parse(user_input)
+    
+        if interpreted_command == -1:
+            print("I can't do that!")
+            
+        try:
+            if "action" in self.commands[interpreted_command]:
+                print(self.commands[interpreted_command]["action"]())
+            else:
+                print(f"I can't {interpreted_command} right now")
+        except Exception as e:
+            print("I can't do that!")
 
 # Testing the parser
-parser = InputParser()
-while True:
-    user_input = input("What do you do: ")
-    interpreted_command = parser.parse(user_input)
-    
-    if interpreted_command == -1:
-        print("I can't do that!")
-        continue
-    try:
-        if "action" in parser.commands[interpreted_command]:
-            print(parser.commands[interpreted_command]["action"]())
-        else:
-            print(f"I can't {interpreted_command} right now")
-    except Exception as e:
-        print("I can't do that!")
+#parser = InputParser()
+#while True:
+#    parser.await_input()
     
