@@ -36,8 +36,8 @@ https://docs.google.com/document/d/1jaVVjRFK2WcIBlWHrsxiOkipU0nfdwgGN73WEbhS_pc/
 - [ ] implement read/write methods to the database
 
 ### UI section(optional)
-- [ ] implement a system to display text outputs to the player
-- [ ] design a method for handling player input
+- [x] implement a system to display text outputs to the player
+- [x] design a method for handling player input
 - [ ] implement adaptive feedback based on player actions
 
 ### debugging
